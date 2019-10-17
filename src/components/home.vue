@@ -201,7 +201,7 @@
             <img :src="src" alt="">
         </Modal>
         <BackTop :bottom="10" :right="10">
-                <div class="top"><span class="iconfont">&#xe63f;</span></div>
+            <div class="top"><span class="iconfont">&#xe63f;</span></div>
         </BackTop>
         <!-- 底部内容 -->
         <Footer v-show="show"></Footer>

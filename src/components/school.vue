@@ -109,7 +109,6 @@
                 </div>
                 <img src="@/assets/images/school/2.jpg" alt="" style="width: 95%;display: block;margin: auto;">
             </div>
-            
         </div>
         <BackTop :bottom="10" :right="10">
             <div class="top"><span class="iconfont">&#xe63f;</span></div>

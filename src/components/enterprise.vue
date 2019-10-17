@@ -6,7 +6,22 @@
             
             <div class="floor1">
                 <img src="@/assets/images/企业.jpg" alt="">
-                <p>熙美诚品拥有10年零售百货行业加盟经验，8大运营中心 21个分公司及办事处，44家直营店，从业人员达到8000多 是中国快时尚百货行业的开拓者和引领者！</p>
+                <p class="textarea">熙美诚品拥有10年零售百货行业加盟经验，8大运营中心 21个分公司及办事处，44家直营店，从业人员达到8000多 是中国快时尚百货行业的开拓者和引领者！</p>
+                <div class="yuanjin">
+                    <p class="one">我们的愿景</p>
+                    <p class="two">做快时尚第一品牌</p>
+                    <p class="three">To Be the First Brand of Fast fashion General Merchandise</p>
+                </div>
+                <div class="shiming">
+                    <p class="one">我们的使命</p>
+                    <p class="two">构筑成功，引领时尚</p>
+                    <p class="three">Construct Success and Leading the Fashion</p>
+                </div>
+                <div class="hexin">
+                    <p class="one">核心价值观</p>
+                    <p class="two">诚信、团结、创新、高效、责任、感恩、利他</p>
+                    <p class="three">Integrity, Unity, Innovation, Efficiency, Responsibility, Gratitude and Altruism</p>
+                </div>
             </div>
             <Carousel v-model="value1" loop autoplay  arrow="never" class="progress address">
                 <CarouselItem>
@@ -37,12 +52,12 @@
                     </div>
                 </CarouselItem>
             </Carousel>
-            <img src="@/assets/images/company/earth.jpg" alt="">
-            <!-- <div class="floor2">
-                <p>熙美诚品将“物超所值”作为品牌的核心理念，将“持续给消费者创造超越期待的产品”作为企业目标，不断给消费者传递快乐和惊喜，
-                    这种质朴的品牌价值也因此赢得众多消费者的青睐，在过去三年中国线下实体零售市场整体低迷的情况下，一举成为快时尚百货领域的领军者。
-                </p> -->
-            <!-- </div> -->
+            <div class="floor0">
+                <!-- <img src="@/assets/images/company/earth.jpg" alt=""> -->
+                <p class="floor-content">熙美诚品将“物超所值”作为品牌的核心理念，将“持续给消费者创造超越期待的产品”作为企业目标，不断给消费者传递快乐和惊喜，这
+                    种质朴的品牌价值也因此赢得众多消费者的青睐，在过去三年中国 线下实体零售市场整体低迷的情况下，一举成为快时尚百货领域的领军者。
+                </p>
+            </div>
             <div class="floor2">
                 <div class="f1" style="background: none;">
                     <p class="p1">Cooperative Brand</p>

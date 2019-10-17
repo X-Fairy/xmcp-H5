@@ -25,7 +25,6 @@
             <div style="height: 60px;width: 100%;">
                 <a href="tel:4008635888"><img src="@/assets/images/phone.png" alt=""></a>
             </div>
-            
         </div>
     </div>
 </template>
