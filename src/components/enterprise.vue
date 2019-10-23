@@ -3,7 +3,6 @@
         <!-- 头部菜单 -->
         <Header></Header>
         <div class="main">
-            
             <div class="floor1">
                 <img src="@/assets/images/企业.jpg" alt="">
                 <p class="textarea">熙美诚品拥有10年零售百货行业加盟经验，8大运营中心 21个分公司及办事处，44家直营店，从业人员达到8000多 是中国快时尚百货行业的开拓者和引领者！</p>
@@ -35,19 +34,19 @@
                 </CarouselItem>
                 <CarouselItem>
                     <div class="demo-carousel">
-                        <img src="@/assets/images/company/banner1.jpg" alt="">
+                        <img src="@/assets/images/company/banner2.jpg" alt="">
                         <div>
-                            <p class="china">华东总部——杭州</p>
-                            <p class="eng">HANGZHOU</p>
+                            <p class="china">仓储物流中心——义乌</p>
+                            <p class="eng">YIWU</p>
                         </div>
                     </div>
                 </CarouselItem>
                 <CarouselItem>
                     <div class="demo-carousel">
-                        <img src="@/assets/images/company/banner1.jpg" alt="">
+                        <img src="@/assets/images/company/banner3.jpg" alt="">
                         <div>
-                            <p class="china">华东总部——杭州</p>
-                            <p class="eng">HANGZHOU</p>
+                            <p class="china">华南总部——广州</p>
+                            <p class="eng">GUANGZHOU</p>
                         </div>
                     </div>
                 </CarouselItem>
@@ -74,7 +73,6 @@
                     <p class="p1">Global Overseas Market</p>
                     <p class="p2">熙美诚品海外市场增长迅猛</p>
                 </div>
-                
                 <p style="padding-bottom: 20px; width: 85%;">好品牌无国界，截至目前，熙美诚品与<span>美国、英国、印度、加拿大、俄罗斯、新加坡、澳大利亚、巴西沙特阿拉伯</span>等确定了合作伙伴关系
                     ，与<span>全球80多个国家和地区</span>达成战略合作协议，平均每一天有1—2家熙美诚品开业，特别是在<span>东南亚各国、俄罗斯、美国、摩洛哥、迪拜</span>等地区，
                     门店数量正在快速递增。
@@ -106,25 +104,29 @@
                 </ul>
             </div>
         </div>
-        <BackTop :bottom="10" :right="10">
+        <BackTop :bottom="50" :right="10">
                 <div class="top"><span class="iconfont">&#xe63f;</span></div>
         </BackTop>
         <!-- 底部内容 -->
         <Footer v-show="show"></Footer>
+        <msg></msg>
     </div>
 </template>
 <script>
 import Header from '@/components/header.vue'
 import Footer from '@/components/footer.vue'
+import Msg from '@/components/msg.vue'
 export default {
     data(){
         return {
-            show:false
+            show:false,
+            value1:0
         }
     },
     components: {
         Header,
-        Footer
+        Footer,
+        Msg
     },
     created () {
         const that = this

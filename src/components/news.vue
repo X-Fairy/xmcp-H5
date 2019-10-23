@@ -20,13 +20,13 @@
             </div>
             <!-- 新闻列表 -->
             <div>
-                <div class="new" v-for="(item) in newList"  :key="item.index">
+                <div class="new" v-for="(item) in newList"  :key="item.index" @click="detail(item.id)">
                     <img :src="item.pathname" alt="" class="newImg">
                     <div class="content">
                         <p class="title">{{item.title}}</p>
                         <p class="describe">{{item.content}}</p>
                         <div>
-                            <span class="more" @click="detail(item.id)">了解更多 &gt;&gt;</span>
+                            <span class="more">了解更多 &gt;&gt;</span>
                             <span>{{item.editeddate}}</span>
                         </div>                                       
                     </div>
@@ -38,16 +38,18 @@
                 <Page  :total="total" :page-size="pageSize" @on-change="changePage" :current="currentPage"></Page>
             </div>
         </div>
-        <BackTop :bottom="10" :right="10">
+        <BackTop :bottom="50" :right="10">
             <div class="top"><span class="iconfont">&#xe63f;</span></div>
         </BackTop>
         <!-- 底部内容 -->
         <Footer v-show="show"></Footer>
+        <Msg></Msg>
     </div>
 </template>
 <script>
 import Header from '@/components/header.vue'
 import Footer from '@/components/footer.vue'
+import Msg from '@/components/msg.vue'
 import https from '@/http.js'
 export default {
     data(){
@@ -65,7 +67,8 @@ export default {
     },
     components: {
         Header,
-        Footer
+        Footer,
+        Msg
     },
     created () {
         const that = this;

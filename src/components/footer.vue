@@ -1,6 +1,7 @@
 <template>
     <div class="footer">
-       <div class="concat" @click="modal1=true">
+       <div class="concat">
+           <!-- @click="modal1=true" -->
            <img src="@/assets/images/concat.jpg" alt="">
        </div>
        <div class="bottom">
@@ -25,7 +26,7 @@
                <P>ICP号：浙CP备13017989号</P>
            </div>
        </div>
-       <Modal v-model="modal1"  class="footerModal">
+       <!-- <Modal v-model="modal1"  class="footerModal">
             <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" >
                 <FormItem label="姓名（已加密，请放心填写）" prop="name">
                     <Input v-model="formValidate.name" placeholder="请输入您的姓名"></Input>
@@ -37,16 +38,15 @@
                     <img src="@/assets/images/submit.png" alt="" style="width: 100%;margin: auto;" @click="handleSubmit('formValidate')">
                 </FormItem>
             </Form>
-        </Modal>
+        </Modal> -->
     </div>
 </template>
-
 <script>
 export default {
     data(){
         return {
             // 是否显示弹出框
-            modal1:false,
+            // modal1:false,
             // 填写表单
             formValidate:{
                 name: '',

@@ -4,17 +4,22 @@
         <Header></Header>
         <!-- 轮播图 -->
         <div class="banner">
-                <Carousel v-model="value1" loop autoplay  arrow="never" dots="inside">
-                    <CarouselItem>
-                        <div class="demo-carousel"><img src="@/assets/images/bnner1.jpg" alt=""></div>
-                    </CarouselItem>
-                    <CarouselItem>
-                        <div class="demo-carousel"><img src="@/assets/images/bnner1.jpg" alt=""></div>
-                    </CarouselItem>
-                    <CarouselItem>
-                        <div class="demo-carousel"><img src="@/assets/images/bnner1.jpg" alt=""></div>
-                    </CarouselItem>
-                </Carousel>
+            <!-- <mt-swipe :auto="4000">
+                <mt-swipe-item><div><img src="@/assets/images/banner/banner1.jpg" alt=""></div></mt-swipe-item>
+                <mt-swipe-item><img src="@/assets/images/banner/banner2.png" alt=""></mt-swipe-item>
+                <mt-swipe-item><img src="@/assets/images/banner/banner3.png" alt=""></mt-swipe-item>
+            </mt-swipe> -->
+            <Carousel v-model="value1" loop autoplay  arrow="never" dots="inside">
+                <CarouselItem>
+                    <div class="demo-carousel"><img src="@/assets/images/banner/banner1.jpg" alt=""></div>
+                </CarouselItem>
+                <CarouselItem>
+                    <div class="demo-carousel"><img src="@/assets/images/banner/banner2.png" alt=""></div>
+                </CarouselItem>
+                <CarouselItem>
+                    <div class="demo-carousel"><img src="@/assets/images/banner/banner3.png" alt=""></div>
+                </CarouselItem>
+            </Carousel>
         </div>
         <!-- 快速入口 -->
         <div class="entry">
@@ -30,7 +35,16 @@
         <div class="main" style="top: 0;margin-bottom: 0;background: #ebebeb;">
             <!-- <img src="@/assets/images/index1.jpg" alt="" @click="$router.push({path: 'enterprise'})" > -->
             <div style="margin: auto;top: 0;text-align:center;width: 100%;">
-                <video-player id="video" class="video-player vjs-custom-skin"  autoplay ref="videoPlayer"  :playsinline="true" :options="playerOptions"></video-player>
+                <video-player  id="video"  class="video-player vjs-custom-skin"   :options="playerOptions"
+                    x-webkit-airplay="allow"
+                    x5-video-player-type="h5"
+                    x5-playsinline="true"
+                    webkit-playsinline="true"
+                    :playsinline="playsinline"
+                    @canplay="onPlayerCanplay($event)"
+                >
+                </video-player>
+                <!-- <video-player v-if="mobile=='iPhone'" id="video" class="video-player vjs-custom-skin"  :options="playerOptions"></video-player> -->
                <!-- <img src="@/assets/images/play.png" alt="" class="playimg" @click="play"> -->
             </div>
             <!-- <img src="@/assets/images/more.png" alt=""> -->
@@ -148,7 +162,8 @@
                     <p class="p1">Public Praise & Popularity</p>
                     <p class="p2">口碑好店 人气爆棚</p>
                 </div>
-                <ul class="storeImg" @click="large">
+                <ul class="storeImg" >
+                        <!-- @click="large" -->
                     <li>
                         <img src="@/assets/images/index/store_03.png" alt="" style="width: 49%;height: 90px;">
                         <img src="@/assets/images/index/store_05.png" alt="" style="width: 25%;height: 90px;">
@@ -200,22 +215,26 @@
         <Modal v-model="Modal" title="查看大图" >
             <img :src="src" alt="">
         </Modal>
-        <BackTop :bottom="10" :right="10">
+        <BackTop :bottom="50" :right="10">
             <div class="top"><span class="iconfont">&#xe63f;</span></div>
         </BackTop>
         <!-- 底部内容 -->
+        <!-- <Bottom></Bottom>
+        <Alert></Alert> -->
         <Footer v-show="show"></Footer>
+        <Msg></Msg>
     </div>
 </template>
-
 <script>
 import Header from '@/components/header.vue'
 import Footer from '@/components/footer.vue'
+import Msg from '@/components/msg.vue'
 import https from '@/http.js'
 
 export default {
     data(){
         return{
+            
             playerOptions :	{
                 // playbackRates: [0.7, 1.0, 1.5, 2.0], //播放速度
                 preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
@@ -240,13 +259,16 @@ export default {
             show:false,
             newList:[],
             Modal:false,
-            src:''
+            src:'',
+            mobile:"",
+            text:"",
+
         }
     },
     components: {
         Header,
         Footer,
-      
+        Msg,
     },
     created () {
         this.getnew();
@@ -256,9 +278,21 @@ export default {
                that.show=true;
                 window.clearInterval(that.timer)
             }
-        }, 1000)
+        }, 1000);
+        
     },
-    methods:{
+    computed: {
+        playsinline(){
+    		var ua = navigator.userAgent.toLocaleLowerCase(); //x5内核
+            if (ua.match(/tencenttraveler/) != null || ua.match(/qqbrowse/) != null) {
+                return false
+            }else{
+                //ios端
+                return true				
+            }
+            }
+    },
+    methods:{       
         getnew(){
             https.get('/gyanwang/index.php/Home/Index/homepage').then((data) => {
                this.newList=data.data;
@@ -272,6 +306,7 @@ export default {
         },
         play(){
             var video =$('#video');
+            
             if(video.paused){
               video.play();
             }else if(video.play()){
@@ -281,7 +316,22 @@ export default {
        large(e){
            this.src=e.target.src;
            this.Modal=true;
-       }
+       },
+       //在vue-video-player的onPlayerCanplay(视频可播放)这个方法中添加回调
+        onPlayerCanplay(player) {
+            // console.log('player Canplay!', player)
+            //解决自动全屏
+            var ua = navigator.userAgent.toLocaleLowerCase();
+            //x5内核
+            if (ua.match(/tencenttraveler/) != null || ua.match(/qqbrowse/) != null) {
+                $('body').find('video').attr('x-webkit-airplay',true).attr('x5-playsinline',true).attr('webkit-playsinline',true).attr('playsinline',true)
+            }else{
+                //ios端
+                $('body').find('video').attr('webkit-playsinline',"true").attr('playsinline',"true") 
+                
+            }
+
+        }
     }
 }
 </script>

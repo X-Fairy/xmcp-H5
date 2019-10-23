@@ -24,7 +24,8 @@
                     <p class="p1">Store Display</p>
                     <p class="p2">店面展示</p>
                 </div>
-                <ul class="img-item" @click="large">
+                <ul class="img-item" >
+                        <!-- @click="large" -->
                     <li class="two">
                         <div>
                             <img src="@/assets/images/store/images/店铺_03.jpg" alt="">
@@ -55,16 +56,18 @@
         <Modal v-model="Modal" title="查看大图" >
             <img :src="src" alt="">
         </Modal>
-        <BackTop :bottom="10" :right="10">
+        <BackTop :bottom="50" :right="10">
             <div class="top"><span class="iconfont">&#xe63f;</span></div>
         </BackTop>
         <!-- 底部内容 -->
         <Footer v-show="show"></Footer>
+        <Msg></Msg>
     </div>
 </template>
 <script>
 import Header from '@/components/header.vue'
 import Footer from '@/components/footer.vue'
+import Msg from '@/components/msg.vue'
 export default {
     data(){
         return {
@@ -76,7 +79,8 @@ export default {
     },
     components: {
         Header,
-        Footer
+        Footer,
+        Msg
     },
     created () {
         const that = this

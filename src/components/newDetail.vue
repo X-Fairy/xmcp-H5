@@ -15,16 +15,18 @@
                     <img class="more" src="@/assets/images/more.png" alt="" @click="$router.push({path:'/news'})">
                 </div>
             </div>
-            <BackTop :bottom="10" :right="10">
+            <BackTop :bottom="50" :right="10">
                 <div class="top"><span class="iconfont">&#xe63f;</span></div>
             </BackTop>
             <!-- 底部内容 -->
             <Footer v-show="show"></Footer>
+            <Msg></Msg>
         </div>
     </template>
     <script>
     import Header from '@/components/header.vue'
     import Footer from '@/components/footer.vue'
+    import Msg from '@/components/msg.vue'
     import https from '@/http.js'
     export default {
         data(){
@@ -36,7 +38,8 @@
         },
         components: {
             Header,
-            Footer
+            Footer,
+            Msg
         },
         created () {
             const that = this
@@ -63,7 +66,7 @@
                     for(let i in imgs){
                         
                         // if(imgs[i].src.indexOf('xmcpcn') == -1){
-                            imgs[i].src=imgs[i].src.replace('ceshi.xmcpcn','xmcpcn');
+                            imgs[i].src=imgs[i].src.replace('web.xmcpcn','xmcpcn');
                         // }
                         console.log(imgs[i].src);
                         

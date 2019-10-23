@@ -110,16 +110,18 @@
                 <img src="@/assets/images/school/2.jpg" alt="" style="width: 95%;display: block;margin: auto;">
             </div>
         </div>
-        <BackTop :bottom="10" :right="10">
+        <BackTop :bottom="50" :right="10">
             <div class="top"><span class="iconfont">&#xe63f;</span></div>
         </BackTop>
         <!-- 底部内容 -->
         <Footer v-show="show"></Footer>
+        <Msg></Msg>
     </div>
 </template>
 <script>
 import Header from '@/components/header.vue'
 import Footer from '@/components/footer.vue'
+import Msg from '@/components/msg.vue'
 export default {
     data(){
         return {
@@ -131,7 +133,8 @@ export default {
     },
     components: {
         Header,
-        Footer
+        Footer,
+        Msg
     },
     created () {
         const that = this
