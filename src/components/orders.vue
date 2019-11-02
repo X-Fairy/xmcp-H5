@@ -89,6 +89,10 @@
                         <span>定期组织培训 提供系统培训支持</span>
                     </li>
                     <li>
+                        <p>熙美诚品</p>
+                        <span>成就加盟商</span>
+                    </li>
+                    <li>
                         <p>每月商学院</p>
                         <span>定期组织培训 提供系统培训支持</span>
                     </li>
@@ -115,22 +119,22 @@
                     <p class="p2">投资回报</p>
                 </div>
                 <div class="ximei">
-                    <img src="@/assets/images/addvantage/13.jpg" alt="">
-                    <p>目前，熙美诚品平均每1天就有2家熙美诚品店开业。熙美诚品对所有门店营业额进行数据分析，得出60平方米的门店平均营业额，每天
+                    <img src="@/assets/images/addvantage/19.jpg" alt="">
+                    <p style="text-indent: 2em;text-align-last:justify; text-align:justify; text-justify:distribute-all-lines;">目前，熙美诚品平均每1天就有2家熙美诚品店开业。熙美诚品对所有门店营业额进行数据分析，得出60平方米的门店平均营业额，每天
                         5000元左右；100平方米的门店平均营业额，每天8000元左右；150平方米的门店平均营业额，每天一万元左右。
                     </p>
                 </div>
                 <div class="path">
-                    <img src="@/assets/images/addvantage/14.jpg" alt="">
+                    <img src="@/assets/images/addvantage/20.jpg" alt="">
                     <div class="f1" style="padding-top: 0;">
                         <p class="p1">Join Process</p>
                         <p class="p2">加盟流程</p>
                     </div>
                     <img src="@/assets/images/addvantage/15.jpg" alt="">
-                    <div style="display: flex;">
+                    <!-- <div style="display: flex;">
                         <img src="@/assets/images/addvantage/16.jpg" alt="" style="width: 50%;height: 50%;">
                         <img src="@/assets/images/addvantage/17.jpg" alt="" style="width: 50%;height: 50%;"> 
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="info4">

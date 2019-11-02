@@ -11,12 +11,12 @@
                     <h3 style="margin-top: 15px;">解码快时尚百货盈利模式</h3>
                     <h3>复制十年运营成功知道</h3>
                 </div>
-                <p class="txt" style="margin-bottom: 20px;">
+                <p class="txt" style="margin-bottom: 20px;text-indent: 2em;">
                     熙美诚品商学院成立于2015年，运用店面管理经验+店面实际操作的培训模式，服务全球加盟商，为加盟商提供店面标准化管理流程，
                     并对门店经营中遇见的疑难给出指导意见，提升加盟店的盈利能力。
                 </p>
                 <img src="@/assets/images/school/1.jpg" alt="">
-                <p class="txt" >
+                <p class="txt" style="text-indent: 2em;">
                      到目前为止，熙美商学院总开课37期，培训店长达1168位，除在义乌开课以外，依托21个分公司、办事处的支持，还在北京、广州、
                      西安、重庆、湖南等地开课，为加盟商保驾护航。
                 </p>
@@ -30,19 +30,20 @@
             <!-- <img src="@/assets/images/学院.jpg" alt=""> -->
             <Carousel v-model="value1" loop autoplay  arrow="never" class="progress" style="margin-top: -20px;">
                 <CarouselItem>
-                    <div class="demo-carousel"><img src="@/assets/images/学院banner1.jpg" alt=""></div>
+                    <div class="demo-carousel"><img src="@/assets/images/school/banner/彩妆.png" alt=""></div>
                 </CarouselItem>
                 <CarouselItem>
-                    <div class="demo-carousel"><img src="@/assets/images/学院banner1.jpg" alt=""></div>
+                    <div class="demo-carousel"><img src="@/assets/images/school/banner/门店.png" alt=""></div>
                 </CarouselItem>
                 <CarouselItem>
-                    <div class="demo-carousel"><img src="@/assets/images/学院banner1.jpg" alt=""></div>
+                    <div class="demo-carousel"><img src="@/assets/images/school/banner/文化.png" alt=""></div>
                 </CarouselItem>
             </Carousel>
             <div class="f1">
                 <p class="p1">Tutor Team</p>
                 <p class="p2">导师团队</p>
             </div>
+            <img src="@/assets/images/school/导师团队.png" alt="" style="margin-bottom: 20px;">
             <!-- 导师轮播 -->
             <Carousel v-model="value2" :loop="loop"  dots="none" arrow="always" class="people">
                 <CarouselItem>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
@@ -54,9 +55,7 @@
                                 <span class="line"></span>
                             </p>
                             <p class="title">王枫 熙美诚品营销中心总经理</p>
-                            <p class="des">1998年开始创业，21年的工作经验。经营多家公司，具有多年实体零售店实战经验</p>
-                            <p class="des">擅长团队心态管理、绩效管理、成本控制、能使企业在新零售不断变化的今天，准确、快速的做出决策</p>
-                            <p class="des">现任熙美诚品品牌运营中心总经理</p>
+                            <p class="des">特聘导师，20多年创业经验,擅长团队管理、绩效管理、成本控制，现任熙美诚品品牌运营中心总经理。</p>
                             <p class="tab"><span class="line"></span>
                                 ”
                                 <span class="line"></span>
@@ -82,25 +81,7 @@
                             </div>
                     </div>
                 </CarouselItem>
-                <CarouselItem>
-                    <div class="demo-carousel">
-                        <img src="@/assets/images/swiper/autor.jpg" alt="">
-                        <div class="content">
-                             <p class="tab"><span class="line"></span>
-                                “
-                                <span class="line"></span>
-                            </p>
-                            <p class="title">王枫 熙美诚品营销中心总经理</p>
-                            <p class="des">1998年开始创业，21年的工作经验。经营多家公司，具有多年实体零售店实战经验</p>
-                            <p class="des">擅长团队心态管理、绩效管理、成本控制、能使企业在新零售不断变化的今天，准确、快速的做出决策</p>
-                            <p class="des">现任熙美诚品品牌运营中心</p>
-                            <p class="tab"><span class="line"></span>
-                                ”
-                                <span class="line"></span>
-                            </p>
-                        </div>
-                    </div>
-                </CarouselItem>
+                
             </Carousel>
             <div class="school3">
                 <div class="f1">

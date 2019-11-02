@@ -2,7 +2,7 @@
     <div class="msg"  >
         <a href="http://www8.53kf.com/m.php?cid=72055204">
             <img src="@/assets/images/2.png" alt=""  width="100%">
-            <img src="@/assets/images/1.png" alt="" class="rotate animated tada" style="position: relative; top: -115px; left: 5px; width: 25px; margin: 0;">
+            <img src="@/assets/images/1.png" alt="" class="rotate animated tada" style="position: relative; top: -110px; left: 5px; width: 25px; margin: 0;">
         </a>
     </div>
 </template>

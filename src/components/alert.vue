@@ -1,9 +1,17 @@
 <template>
     <div class="alert" v-show="showAnimate">
-        <a href="http://www8.53kf.com/m.php?cid=72055204">
+        <div>
             <img src="@/assets/images/alert.png" alt="" class="alert-img">
-        </a>
-        <img src="@/assets/images/关闭.png" alt="" class="close" @click="close">
+            <div class="alert-bottom">
+                <a href="http://www8.53kf.com/m.php?cid=72055204" class="zixun">
+                    立即咨询
+                </a>
+                <a class="next-one" @click="close">下次再说</a>
+            </div>
+            
+        </div>
+        
+        <!-- <img src="@/assets/images/关闭.png" alt="" class="close" @click="close"> -->
     </div>
 </template>
 <script>
@@ -22,7 +30,7 @@
         methods:{
             close(){
                 this.showAnimate=false;
-                setInterval(() => {
+                setTimeout(() => {
                     this.showAnimate=true;		
                 }, 15000);
             },

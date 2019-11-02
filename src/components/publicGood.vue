@@ -26,7 +26,7 @@
                     <img src="@/assets/images/school/images/公益_20.jpg" alt="">
                 </div>
             </div>
-            <!-- <img src="@/assets/images/公益.jpg" alt=""> -->
+            <img src="@/assets/images/公益2.jpg" alt="">
         </div>
         <BackTop :bottom="50" :right="10">
             <div class="top"><span class="iconfont">&#xe63f;</span></div>

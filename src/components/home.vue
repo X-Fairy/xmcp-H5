@@ -9,7 +9,21 @@
                 <mt-swipe-item><img src="@/assets/images/banner/banner2.png" alt=""></mt-swipe-item>
                 <mt-swipe-item><img src="@/assets/images/banner/banner3.png" alt=""></mt-swipe-item>
             </mt-swipe> -->
-            <Carousel v-model="value1" loop autoplay  arrow="never" dots="inside">
+            <!-- <Carousel v-model="value1" loop>
+                <CarouselItem>
+                    <div class="demo-carousel">1</div>
+                </CarouselItem>
+                <CarouselItem>
+                    <div class="demo-carousel">2</div>
+                </CarouselItem>
+                <CarouselItem>
+                    <div class="demo-carousel">3</div>
+                </CarouselItem>
+                <CarouselItem>
+                    <div class="demo-carousel">4</div>
+                </CarouselItem>
+            </Carousel> -->
+            <Carousel v-model="value" loop autoplay  arrow="always" dots="inside"  :autoplay-speed='speed'>
                 <CarouselItem>
                     <div class="demo-carousel"><img src="@/assets/images/banner/banner1.jpg" alt=""></div>
                 </CarouselItem>
@@ -62,15 +76,15 @@
                     <p class="p1">Northern Europe Style</p>
                     <p class="p2">北欧风格 简约时尚契合潮流</p>
                 </div>
-                <Carousel v-model="value1" loop autoplay  arrow="never" class="progress">
+                <Carousel v-model="value1" loop autoplay  arrow="always" class="progress">
                     <CarouselItem>
                         <div class="demo-carousel"><img src="@/assets/images/banner1.jpg" alt=""></div>
                     </CarouselItem>
                     <CarouselItem>
-                        <div class="demo-carousel"><img src="@/assets/images/banner1.jpg" alt=""></div>
+                        <div class="demo-carousel"><img src="@/assets/images/banner2.jpg" alt=""></div>
                     </CarouselItem>
                     <CarouselItem>
-                        <div class="demo-carousel"><img src="@/assets/images/banner1.jpg" alt=""></div>
+                        <div class="demo-carousel"><img src="@/assets/images/banner3.jpg" alt=""></div>
                     </CarouselItem>
                 </Carousel>
             </div>
@@ -79,7 +93,7 @@
                     <p class="p1">Global Overseas Market</p>
                     <p class="p2">熙美诚品海外市场增长迅猛</p>
                 </div>
-                <h2>熙美诚品全球<span>1500</span>多家门店</h2>
+                <h2>熙美诚品全球<span>1600</span>多家门店</h2>
                 <h2>覆盖<span>84</span>个国家及地区</h2>
                 <img src="@/assets/images/market.jpg" alt="">
                 <p style="padding-bottom: 20px; width: 85%;">好品牌无国界，截至目前，熙美诚品与<span>美国、英国、印度、加拿大、俄罗斯、新加坡、澳大利亚、巴西沙特阿拉伯</span>等确定了合作伙伴关系
@@ -255,6 +269,7 @@ export default {
                 // }
                 
             },
+            value:0,
             value1:0,
             show:false,
             newList:[],
@@ -262,6 +277,7 @@ export default {
             src:'',
             mobile:"",
             text:"",
+            speed:5000
 
         }
     },
