@@ -22,7 +22,7 @@
                 <li @click="$router.push({path: 'orders'})">招商加盟</li>
                 <li @click="$router.push({path: 'store'})">店面展示</li>
                 <li @click="$router.push({path: 'news'})">资讯新闻</li>
-                <li @click="$router.push({path: 'publicGood'})">熙美公益</li>
+                <!-- <li @click="$router.push({path: 'publicGood'})">熙美公益</li> -->
                 <li @click="$router.push({path: 'school'})">商学院</li>
                 <li @click="$router.push({path: 'product'})">产品分类</li>
             </ul>

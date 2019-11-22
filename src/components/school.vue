@@ -17,8 +17,7 @@
                 </p>
                 <img src="@/assets/images/school/1.jpg" alt="">
                 <p class="txt" style="text-indent: 2em;">
-                     到目前为止，熙美商学院总开课37期，培训店长达1168位，除在义乌开课以外，依托21个分公司、办事处的支持，还在北京、广州、
-                     西安、重庆、湖南等地开课，为加盟商保驾护航。
+                    截止2019年10月，熙美诚品商学院已举办38期“金牌加盟商培训会”，小型精品培训会14期，培训人次近2000人。分别在北京、广州、南京、西安、重庆、成都等地开课，持续为加盟商后续经营保驾护航。
                 </p>
             </div>
             <div class="school2">
@@ -71,8 +70,8 @@
                                     “
                                     <span class="line"></span>
                                 </p>
-                                <p class="title">刘尧 熙美诚品采购经理</p>
-                                <p class="des">熙美诚品首席彩妆师，拥有10年彩妆护理经验。</p>
+                                <p class="title">刘尧 产品中心健康美容产品经理</p>
+                                <p class="des">熙美诚品产品中心健康美容产品经理，2012年至今担任熙美诚品健康美容类产品培训讲师，从事护肤彩妆行业十年，熙美诚品首席彩妆大师、护肤彩妆体验官。</p>
                                 
                                 <p class="tab"><span class="line"></span>
                                     ”
@@ -81,7 +80,38 @@
                             </div>
                     </div>
                 </CarouselItem>
-                
+                <CarouselItem>
+                    <div class="demo-carousel">
+                        <img src="@/assets/images/swiper/4.png" alt="">
+                        <div class="content">
+                            <p class="tab"><span class="line"></span> “  <span class="line"></span></p>
+                            <p class="title">江晓梅 运营中心华东大区总监</p>
+                            <p class="des">具有5年门店实战经验，对于门店运营颇深见解，现任华东大区总监；累积下店数量达到300家，为熙美培育了一大批督导、店长服务门店。</p>
+                            
+                            <p class="tab"><span class="line"></span>
+                                ”
+                                <span class="line"></span>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </CarouselItem>
+                <CarouselItem>
+                    <div class="demo-carousel">
+                        <img src="@/assets/images/swiper/5.png" alt="">
+                        <div class="content">
+                            <p class="tab">
+                                <span class="line"></span> “ <span class="line"></span>
+                            </p>
+                            <p class="title">沈丽琪 运营中心直营部负责人</p>
+                            <p class="des">熙美首席化妆师、5年督导下店实战经验、300家门店实战经验、8省门店带教经验；擅长商品陈列设计、门店销售技巧、门店彩妆快速入门。</p>
+                            <p class="tab"><span class="line"></span>
+                                ”
+                                <span class="line"></span>
+                            </p>
+                        </div>
+                    </div>
+                </CarouselItem>
             </Carousel>
             <div class="school3">
                 <div class="f1">

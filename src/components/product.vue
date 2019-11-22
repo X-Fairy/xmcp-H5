@@ -62,7 +62,7 @@ export default {
                 {label:"饰品系列",name:4},
                 {label:"季节产品",name:5},
                 {label:"精美包饰",name:6},
-                {label:"毛绒公仔",name:7},
+                {label:"毛绒玩具",name:7},
                 {label:"数码配件",name:8},
                 {label:"休闲食品",name:9}
             ],

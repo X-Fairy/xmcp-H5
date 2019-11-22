@@ -10,7 +10,7 @@
                     <p class="p2">全新店面升级</p>
                 </div>
                 <img src="@/assets/images/store/1.jpg" alt="">
-                <p class="item-content">熙美诚品全新店铺整体呈现出强烈的北欧风，空间色彩采用芬兰绿，形成统一的视觉感，诠释强烈的快时尚风格；</p>
+                <p class="item-content">熙美诚品全新店铺形象，以北欧风为基调，空间色彩采用马尔斯绿，视觉统一；在产品的陈列上，从颜色、质感、款式等方面匹配货柜设计，高低组合、错落有致，让每款产品出现在最合适的位置上，从细节上体现品牌对完美和高品质的追求，给顾客带来舒适的视觉感受和购物体验。</p>
                 <div class="img-item">
                     <img src="@/assets/images/store/2.jpg" alt="">
                     <img src="@/assets/images/store/3.jpg" alt="">

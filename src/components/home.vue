@@ -4,35 +4,24 @@
         <Header></Header>
         <!-- 轮播图 -->
         <div class="banner">
-            <!-- <mt-swipe :auto="4000">
-                <mt-swipe-item><div><img src="@/assets/images/banner/banner1.jpg" alt=""></div></mt-swipe-item>
-                <mt-swipe-item><img src="@/assets/images/banner/banner2.png" alt=""></mt-swipe-item>
-                <mt-swipe-item><img src="@/assets/images/banner/banner3.png" alt=""></mt-swipe-item>
-            </mt-swipe> -->
-            <!-- <Carousel v-model="value1" loop>
-                <CarouselItem>
-                    <div class="demo-carousel">1</div>
-                </CarouselItem>
-                <CarouselItem>
-                    <div class="demo-carousel">2</div>
-                </CarouselItem>
-                <CarouselItem>
-                    <div class="demo-carousel">3</div>
-                </CarouselItem>
-                <CarouselItem>
-                    <div class="demo-carousel">4</div>
-                </CarouselItem>
-            </Carousel> -->
             <Carousel v-model="value" loop autoplay  arrow="always" dots="inside"  :autoplay-speed='speed'>
+                <!-- <CarouselItem>
+                    <div class="demo-carousel">
+                        <a href="http://www8.53kf.com/m.php?cid=72055204">
+                            <img src="@/assets/images/banner/banner.png" alt="">
+                        </a>
+                    </div>
+                </CarouselItem> -->
+                <CarouselItem>
+                    <div class="demo-carousel"><img src="@/assets/images/banner/banner3.png" alt=""></div>
+                </CarouselItem>
                 <CarouselItem>
                     <div class="demo-carousel"><img src="@/assets/images/banner/banner1.jpg" alt=""></div>
                 </CarouselItem>
                 <CarouselItem>
                     <div class="demo-carousel"><img src="@/assets/images/banner/banner2.png" alt=""></div>
                 </CarouselItem>
-                <CarouselItem>
-                    <div class="demo-carousel"><img src="@/assets/images/banner/banner3.png" alt=""></div>
-                </CarouselItem>
+                
             </Carousel>
         </div>
         <!-- 快速入口 -->
@@ -104,7 +93,7 @@
             <div class="goodness">
                 <div class="f1">
                     <p class="p1">Global Overseas Market</p>
-                    <p class="p2" style="color: #fff;">10大加盟优势</p>
+                    <p class="p2" style="color: #fff;">10大核心竞争力</p>
                 </div>
                 <ul>
                     <li>
@@ -112,7 +101,7 @@
                         <p>作风过硬，保障有力，超强执行力团队</p>
                     </li>
                     <li>
-                        <p style="font-size: 14px;">5万平仓储物流中心</p>
+                        <p style="font-size: 14px;">50000m2仓储物流中心</p>
                         <p>为客户提供无忧的货品供给，3.9亿库存</p>
                     </li>
                     <li>
@@ -124,28 +113,28 @@
                         <p>大数据基础、团队基础、供应链基础</p>
                     </li>
                     <li>
-                        <p style="font-size: 14px;">1千家优质产品供应商</p>
-                        <p>50%合作3年以上的优质供应商，重叠度最高</p>
+                        <p style="font-size: 14px;">1000家优质产品供应商</p>
+                        <p>50%合作5年以上的优质供应商，产品质量是企业的生命线</p>
                     </li>
                     <li>
-                        <p style="font-size: 14px;">产品快速更新</p>
+                        <p style="font-size: 14px;">天下武功，唯快不破</p>
                         <p>平均每个月800款新品的速度、同行业的标杆</p>
                     </li>
                     <li>
                         <p style="font-size: 14px;">7大区督导配置</p>
-                        <p>7大运营中心，服务范围覆盖全国</p>
+                        <p>督导下店，服务范围覆盖全国，平均每季度下店服务超过900家门店</p>
                     </li>
                     <li>
-                        <p style="font-size: 14px;">成熟的供应链</p>
-                        <p> 6千款时尚潮品，物超所值，深受消费者喜爱</p>
+                        <p style="font-size: 14px;">供应链</p>
+                        <p> 6000款SKU，百分百全系列定制产品，品质有保证，首批货品百分百调换货政策</p>
                     </li>
                     <li>
-                        <p style="font-size: 14px;">全年12场大型培训会</p>
-                        <p>多场精品培训会</p>
+                        <p style="font-size: 14px;">全年度12场商学院培训会</p>
+                        <p>行业人才孵化器，七个大区巡回培训</p>
                     </li>
                     <li>
                         <p style="font-size: 14px;">整店输出 </p>
-                        <p>全程持续服务，让加盟商开店全程无忧</p>
+                        <p>选址、开业、货品供给、督导下店，全程持续服务，让加盟商开店无忧</p>
                     </li>
                 </ul>
                 <img src="@/assets/images/goodness.jpg" alt="" style="width: 91%;display: block;margin: auto;padding-bottom: 20px;">
@@ -218,7 +207,7 @@
             <div class="news">
                 <div class="info">
                     <img src="@/assets/images/newBanner.jpg" alt="">
-                    <div class="content" v-for="(item,index) in newList" :key="index">
+                    <div class="content" v-for="(item,index) in newList" :key="index" @click="detail(item.id)">
                         <p class="title">{{item.title}}</p>
                         <p class="time">{{item.editeddate}}</p>
                     </div>
@@ -233,8 +222,8 @@
             <div class="top"><span class="iconfont">&#xe63f;</span></div>
         </BackTop>
         <!-- 底部内容 -->
-        <!-- <Bottom></Bottom>
-        <Alert></Alert> -->
+        <!-- <Bottom></Bottom> -->
+        <!-- <Alert></Alert> -->
         <Footer v-show="show"></Footer>
         <Msg></Msg>
     </div>
@@ -244,7 +233,7 @@ import Header from '@/components/header.vue'
 import Footer from '@/components/footer.vue'
 import Msg from '@/components/msg.vue'
 import https from '@/http.js'
-
+import Bottom from '@/components/bottom.vue'
 export default {
     data(){
         return{
@@ -285,6 +274,7 @@ export default {
         Header,
         Footer,
         Msg,
+        
     },
     created () {
         this.getnew();
@@ -347,6 +337,10 @@ export default {
                 
             }
 
+        },
+        // 查看文章详情
+        detail(id){
+            this.$router.push({path:'/newDetail',query:{num:id}})
         }
     }
 }

@@ -22,23 +22,10 @@
                <img src="@/assets/images/LOGO.png" alt="">
                <h3>免费热线：400-863-5888</h3>
                <p>@2019熙美诚品 版权所有 ALL Rights Reserved</p>
-               <p>网站所属：广州熙彬贸易有限公司</p>
+               <p>网站所属：{{content}}</p>
                <P>ICP号：浙CP备13017989号</P>
            </div>
        </div>
-       <!-- <Modal v-model="modal1"  class="footerModal">
-            <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" >
-                <FormItem label="姓名（已加密，请放心填写）" prop="name">
-                    <Input v-model="formValidate.name" placeholder="请输入您的姓名"></Input>
-                </FormItem>
-                <FormItem label="电话（已加密，请放心填写）" prop="phone">
-                    <Input v-model="formValidate.phone" placeholder="请输入您的电话" type="number"></Input>
-                </FormItem>
-                <FormItem>
-                    <img src="@/assets/images/submit.png" alt="" style="width: 100%;margin: auto;" @click="handleSubmit('formValidate')">
-                </FormItem>
-            </Form>
-        </Modal> -->
     </div>
 </template>
 <script>
@@ -59,10 +46,13 @@ export default {
                 phone: [
                     {  type: 'number',required: true, message: '电话不能为空', trigger: 'blur' },
                 ],
-            }
+            },
+            content:'广州熙彬贸易有限公司'
         }
     },
-    
+    created(){
+       this.change()
+    },
     methods:{
         handleSubmit (name) {
             this.$refs[name].validate((valid) => {
@@ -73,6 +63,15 @@ export default {
                 }
             })
         },
+        change(){
+            console.log(location.href);
+            if(location.href.includes('xmvogue')){
+                console.log(1);
+                this.content='广州熙彬贸易有限公司'
+            }else{
+                this.content='义乌楚睿电子商务有限公司';
+            }
+        }
     }
 }
 </script>

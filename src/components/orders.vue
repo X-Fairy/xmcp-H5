@@ -7,20 +7,20 @@
             <div class="info1">
                 <div class="f1" style="padding-top: 0;">
                     <p class="p1">Core Strengths</p>
-                    <p class="p2">核心优势</p>
+                    <p class="p2">10大核心竞争力</p>
                 </div>
                 <ul>
                     <li style="width: 48%">
                         <div>
-                            <p>5万平仓储物流中心</p>
-                            <span>为客户提供3.9亿库存</span>
+                            <p>50000m2平仓储物流中心</p>
+                            <span>为客户提供无忧的货品供给，3.9亿库存</span>
                         </div>
                         <img src="@/assets/images/addvantage/1.jpg" alt="">
                     </li>
                     <li style="width: 48%">
                         <div>
-                            <p>1000家优质的产品供应商</p>
-                            <span>50%合作3年以上，重叠度最高</span>
+                            <p>1000家优质产品供应商</p>
+                            <span>50%合作5年以上的优质供应商，产品质量是企业的生命线</span>
                         </div>
                         <img src="@/assets/images/addvantage/2.jpg" alt="">
                     </li>
@@ -33,29 +33,29 @@
                     </li>
                     <li>
                         <div>
-                            <p>300+老加盟商开二店及多店</p>
-                            <span>二店率高达38%</span>
+                            <p>二店率高达38%</p>
+                            <span>老加盟商开2店或多店超过400家</span>
                         </div>
                         <img src="@/assets/images/addvantage/4.jpg" alt="">
                     </li>
                     <li>
                         <div>
                             <p>7大区督导配置</p>
-                            <span>北京、兰州、郑州、杭州、南京、广州、成都、义乌——服务覆盖全国</span>
+                            <span>督导下店，服务范围覆盖全国，平均每季度下店服务超过900家门店</span>
                         </div>
                         <img src="@/assets/images/addvantage/5.jpg" alt="">
                     </li>
                     <li style="width: 48%">
                         <div>
-                            <p>全年12场大型培训会</p>
-                            <span>N+场精品培训会</span>
+                            <p>全年度12场商学院培训会</p>
+                            <span>行业人才孵化器，七个大区巡回培训</span>
                         </div>
                         <img src="@/assets/images/addvantage/6.jpg" alt="">
                     </li>
                     <li style="width: 48%">
                         <div>
                             <p>军事化管理团队</p>
-                            <span>保障有力，超强执行力团队</span>
+                            <span>作风过硬，保障有力，超强执行力团队</span>
                         </div>
                         <img src="@/assets/images/addvantage/7.jpg" alt="">
                     </li>
@@ -69,7 +69,7 @@
                     <p class="p1">Support System</p>
                     <p class="p2">支持体系</p>
                 </div>
-                <p class="t">从选址到后期运营，我们一路保驾护航</p>
+                <p class="t">从找店面到落地运营，全方位嵌入支持</p>
                 <ul>
                     
                     <li>
@@ -120,7 +120,7 @@
                 </div>
                 <div class="ximei">
                     <img src="@/assets/images/addvantage/19.jpg" alt="">
-                    <p style="text-indent: 2em;text-align-last:justify; text-align:justify; text-justify:distribute-all-lines;">目前，熙美诚品平均每1天就有2家熙美诚品店开业。熙美诚品对所有门店营业额进行数据分析，得出60平方米的门店平均营业额，每天
+                    <p style="text-indent: 2em; text-align:justify; text-justify:distribute-all-lines;">目前，熙美诚品平均每1天就有2家熙美诚品店开业。熙美诚品对所有门店营业额进行数据分析，得出60平方米的门店平均营业额，每天
                         5000元左右；100平方米的门店平均营业额，每天8000元左右；150平方米的门店平均营业额，每天一万元左右。
                     </p>
                 </div>
@@ -146,47 +146,48 @@
                 <ul class="item">
                     <li v-for="(item,index) in iconList" :key="index" :class="{'active':value === item.index}" @click="method(item.index)">
                         <span :class="item.icon" class="iconfont"></span>
-                        <p>{{item.label}}</p>
+                        <p style="margin-bottom: 15px;">{{item.label}}</p>
+                        <p style="width: 90px;margin-left: -10px;color:#495060;">{{item.text}}</p>
                     </li>
                 </ul>
                 <ul class="item-content" v-show="value=='1'">
                     <li>
                         <span>01</span>
-                        <p>合作申请、考察公司</p>
+                        <p>店面选址</p>
                     </li>
                     <li>
                         <span>02</span>
                         <p>根据当地商圈店面评估，人流量测试 </p>
                     </li>
-                    <li>
+                    <!-- <li>
                         <span>03</span>
                         <p>为加盟商寻找店面 </p>
-                    </li>
+                    </li> -->
                 </ul>
                 <ul class="item-content" v-show="value=='2'">
                     <!-- <p style="padding-left: 15px;">1个月内</p> -->
                     <li>
                         <span>01</span>
-                        <p>签订合约</p>
+                        <p>施工 店铺工程指导</p>
                     </li>
                     <li>
                         <span>02</span>
-                        <p>店面装修 </p>
+                        <p>效果图设计</p>
                     </li>
                     <li>
                         <span>03</span>
-                        <p>装修支持</p>
+                        <p>督导下店支持</p>
                     </li>
                     <li>
                         <span>04</span>
-                        <p>物流配送</p>
+                        <p>宣传推广支持</p>
                     </li>
                 </ul>
                 <ul class="item-content" v-show="value=='3'">
                     <!-- <p style="padding-left: 15px;">3-6个月</p> -->
                     <li>
                         <span>01</span>
-                        <p>运营辅导</p>
+                        <p>运营指导</p>
                     </li>
                     <li>
                         <span>02</span>
@@ -196,24 +197,24 @@
                         <span>03</span>
                         <p>集中培训、复训</p>
                     </li>
-                    <li>
+                    <!-- <li>
                         <span>04</span>
                         <p>店面运营支持</p>
-                    </li>
+                    </li> -->
                 </ul>
                 <ul class="item-content" v-show="value=='4'">
                     <!-- <p style="padding-left: 15px;">6个月之后</p> -->
                     <li>
                         <span>01</span>
-                        <p>定期强化培训支持</p>
-                    </li>
-                    <li>
-                        <span>02</span>
                         <p>日常运营管理支持</p>
                     </li>
                     <li>
+                        <span>02</span>
+                        <p>定期强化培训支持</p>
+                    </li>
+                    <li>
                         <span>03</span>
-                        <p>统一品牌宣传推广支持 </p>
+                        <p>品牌宣传推广支持 </p>
                     </li>
                 </ul>
             </div>
@@ -235,10 +236,10 @@ export default {
         return {
             show:false,
             iconList:[
-                {index:'1',label:'筹备期' ,icon:'el-iconchoubeijieduan'},
-                {index:'2',label:'开业前',icon:'el-iconchoubeijihua'},
-                {index:'3',label:'发展期',icon:'el-iconfazhan'},
-                {index:'4',label:'稳定器',icon:'el-iconwendingxing'},
+                {index:'1',label:'筹备期' ,icon:'el-iconchoubeijieduan',text:''},
+                {index:'2',label:'开业前',icon:'el-iconchoubeijihua',text:'（1个月内）'},
+                {index:'3',label:'发展期',icon:'el-iconfazhan',text:'（3-6个月）'},
+                {index:'4',label:'稳定期',icon:'el-iconwendingxing',text:'（6个月之后）'},
             ],
             value:'1',
         }
