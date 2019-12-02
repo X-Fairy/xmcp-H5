@@ -7,18 +7,21 @@ import '@/assets/style/index.less'
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 Vue.use(iView);
+// import VueAwesomeSwiper from 'vue-awesome-swiper'
+// import 'swiper/dist/css/swiper.css'
+// Vue.use(VueAwesomeSwiper)
 // 引入全部组件
-import { Swipe, SwipeItem } from 'vant';
-Vue.use(Swipe).use(SwipeItem);
+// import { Swipe, SwipeItem } from 'vant';
+// Vue.use(Swipe).use(SwipeItem);
 // 引用视频插件
 import VideoPlayer from 'vue-video-player'
 require('video.js/dist/video-js.css')
 require('vue-video-player/src/custom-theme.css')
 Vue.use(VideoPlayer)
 
-import animated from 'animate.css' // npm install animate.css --save安装，再引入
+// import animated from 'animate.css' // npm install animate.css --save安装，再引入
 
- Vue.use(animated)
+//  Vue.use(animated)
 
 
 // 注册一个全局自定义指令 `v-focus`

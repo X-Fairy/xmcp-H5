@@ -6,26 +6,24 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
-    // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      // 配置请求地址
-      // '/newoa': 'http://172.21.8.117/',
-      // 配置线上
-      '/newoa': {
-        target: 'http://oa.xmvogue.com/',
-        changeOrigin: true,  //是否跨域
-        pathRewrite: {
-          '^/newoa': '/'   //重写接口
-        }
-      }
+        // '/word/public/index.php': 'http://172.21.8.128/',
+        // '/word/public/index.php?s=': 'http://order.xmvogue.com/',
+        // 配置线上
+        '/word/public/index.php': {
+            target: 'http://order.xmvogue.com/',
+            changeOrigin: true,  //是否跨域
+            pathRewrite: {
+            // '^/word/public/index.php?s=': '/'   //重写接口
+            }
+        },
     },
 
-    // Various Dev Server settings
+    // Various Dev Server settings 
     host: 'localhost', // can be overwritten by process.env.HOST
-    port: 88, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: 80, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,
@@ -42,7 +40,7 @@ module.exports = {
     /**
      * 
      * Source Maps
-     */
+     */ 
 
     // https://webpack.js.org/configuration/devtool/#development
     devtool: 'cheap-module-eval-source-map',
@@ -62,7 +60,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/Public/',
+    assetsPublicPath: '/',
 
     /**
      * Source Maps

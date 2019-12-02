@@ -1,54 +1,111 @@
-.store1,{
-    .item-content{
-        padding: 10px 20px;
-        
-        line-height: 22px;
-        font-size: 14px;
-        letter-spacing: 1px;
+.store{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .header {
+        background: #fff;
+        top:0;
     }
-    .img-item{
-        width: 90%;
-        display: flex;
-        justify-content: space-between;
-        margin: auto;
-        img{
-            width: 50%;
-            height: 100%;
+    .main{
+        position: relative;
+        margin-top:95px;
+        width: 100%;
+        .linear{
+            height:50px;
+            background: linear-gradient(to bottom,#e4e4e4,#fff);
         }
-    }
-}
-.store2{
-    padding-bottom: 20px;
-    .img-item{
-        width: 90%;
-        margin: auto;
-        li.one{
+        .floor1{
             width: 100%;
-        }
-        li.two,li.three{
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            div,img{
-                width: 50%;
-                height: 100%;
+            .info{
+                width: 63%;
+                margin: auto;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 40px;
+                padding-bottom: 30px;
+                .content{
+                    width:40%;
+                }
+                .banner{
+                    width:55%;
+                }
+                .content{
+                    text-align: left;
+                    h4{
+                        // margin-top: 20px;
+                        color: #dcdcdc;
+                        font-size: 24px;
+                    }
+                    h1{
+                        font-size: 40px;
+                        color: #1d8c9f;
+                    }
+                    p.line{
+                        // margin: auto;
+                        width: 50px;
+                        height: 3px;
+                        background-color: #e7d832;
+                        margin-top: 20px;
+                        margin-bottom: 40px;
+                    }
+                    p.txt{
+                        font-size: 16px;
+                        font-family: 宋体;
+                    }
+                }
             }
-            div img{
+        }
+        .floor2{
+            margin-top: 60px;
+            width: 100%;
+            text-align: center;
+            h4{
+                color: #dcdcdc;
+                font-size: 24px;
+            }
+            h1{
+                font-size: 40px;
+                color: #1d8c9f;
+            }
+            p.line{
+                margin: auto;
+                width: 50px;
+                height: 3px;
+                background-color: #e7d832;
+                margin-top: 20px;
+                margin-bottom: 40px;
+            }
+            .info{
                 width: 100%;
+                position: relative;
+                .content{
+                    width: 62.5%;
+                    margin:50px  auto;
+                    height: 70px;
+                    border: 1px solid #1d8c9f;
+                    .title{
+                        font-size: 18px;
+                        color: #fff;
+                        width:60%;
+                        margin: auto;
+                        padding: 6px;
+                        margin-top: -20px;;
+                        background: #1d8c9f;
+                    }
+                    .subtitle{
+                        font-size: 24px;
+                        color: #1d8c9f;
+                        width: 42%;
+                        padding-top: 12px;
+                        background: #fff;
+                        margin: auto;
+                        span{
+                            font-size: 33px;
+                            font-weight: 600;
+                        }
+                    }
+                }
             }
-            
-        }
-        li.three{
-            
-            img{
-                width: 32%;
-                margin-bottom: 10px;
-                height: 100%;
-            }
-            
         }
     }
-}
-.ivu-modal-body img{
-    width: 100%
 }

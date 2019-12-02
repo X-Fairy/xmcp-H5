@@ -1,245 +1,312 @@
 <template>
     <div class="index">
-        <!-- 头部菜单 -->
-        <Header></Header>
-        <!-- 轮播图 -->
-        <div class="banner">
-            <Carousel v-model="value" loop autoplay  arrow="always" dots="inside"  :autoplay-speed='speed'>
-                <!-- <CarouselItem>
-                    <div class="demo-carousel">
-                        <a href="http://www8.53kf.com/m.php?cid=72055204">
-                            <img src="@/assets/images/banner/banner.png" alt="">
-                        </a>
-                    </div>
-                </CarouselItem> -->
-                <CarouselItem>
-                    <div class="demo-carousel"><img src="@/assets/images/banner/banner3.png" alt=""></div>
-                </CarouselItem>
-                <CarouselItem>
-                    <div class="demo-carousel"><img src="@/assets/images/banner/banner1.jpg" alt=""></div>
-                </CarouselItem>
-                <CarouselItem>
-                    <div class="demo-carousel"><img src="@/assets/images/banner/banner2.png" alt=""></div>
-                </CarouselItem>
-                
-            </Carousel>
-        </div>
-        <!-- 快速入口 -->
-        <div class="entry">
-            <div class="entry1">
-                <img src="@/assets/images/企业信息.png" alt="" @click="$router.push({path: 'enterprise'})" >
-                <a href="tel:4008635888"><img src="@/assets/images/电话资讯.png" alt=""></a>
-            </div>
-            <div class="entry2">
-                <img src="@/assets/images/店面展示.png" alt="" @click="$router.push({path: 'store'})">
-                <img src="@/assets/images/招商加盟.png" alt="" @click="$router.push({path: 'orders'})">
-            </div>
-        </div>
-        <div class="main" style="top: 0;margin-bottom: 0;background: #ebebeb;">
-            <!-- <img src="@/assets/images/index1.jpg" alt="" @click="$router.push({path: 'enterprise'})" > -->
-            <div style="margin: auto;top: 0;text-align:center;width: 100%;">
-                <video-player  id="video"  class="video-player vjs-custom-skin"   :options="playerOptions"
-                    x-webkit-airplay="allow"
-                    x5-video-player-type="h5"
-                    x5-playsinline="true"
-                    webkit-playsinline="true"
-                    :playsinline="playsinline"
-                    @canplay="onPlayerCanplay($event)"
-                >
-                </video-player>
-                <!-- <video-player v-if="mobile=='iPhone'" id="video" class="video-player vjs-custom-skin"  :options="playerOptions"></video-player> -->
-               <!-- <img src="@/assets/images/play.png" alt="" class="playimg" @click="play"> -->
-            </div>
-            <!-- <img src="@/assets/images/more.png" alt=""> -->
-            <div class="company">
-                <div class="f1">
-                    <p class="p1">Company Profile</p>
-                    <p class="p2">企业介绍</p>
-                </div>
-                <p class="p">熙美诚品将“物超所值”作为品牌的核心理念，将“持续给消费者创造超越期待的产品”作为企业目标，期待每件拥有自己独特触感的产品，
-                都能温柔的融入生活，简单却实用的给消费者传递快乐和惊喜...</p>
-                <img src="@/assets/images/more.png" alt="" class="more" @click="$router.push({path: 'enterprise'})">
-            </div>
-            <div>
-                <div class="f1" style="background: #fff;">
-                    <p class="p1">Northern Europe Style</p>
-                    <p class="p2">北欧风格 简约时尚契合潮流</p>
-                </div>
-                <Carousel v-model="value1" loop autoplay  arrow="always" class="progress">
+        <!-- 头部 -->
+        <Header tab='1'></Header>
+        <!-- 中间内容 -->
+        <div class="main">
+            <!-- <h1 class="media">123</h1> -->
+            <div class="banner">
+                <Carousel autoplay v-model="value" loop :autoplay-speed="5000">
                     <CarouselItem>
-                        <div class="demo-carousel"><img src="@/assets/images/banner1.jpg" alt=""></div>
+                        <div class="demo-carousel">
+                            <img src="@/assets/images/banner/PC-banner1.jpg" alt="">
+                            <img class="icon" src="@/assets/images/icon/5.png" alt="" @click="change">
+                        </div>
                     </CarouselItem>
                     <CarouselItem>
-                        <div class="demo-carousel"><img src="@/assets/images/banner2.jpg" alt=""></div>
+                        <div class="demo-carousel">
+                            <img src="@/assets/images/banner/PC-banner2.jpg" alt="">
+                            <img class="icon" src="@/assets/images/icon/5.png" alt="" @click="change">
+                        </div>
                     </CarouselItem>
                     <CarouselItem>
-                        <div class="demo-carousel"><img src="@/assets/images/banner3.jpg" alt=""></div>
+                        <div class="demo-carousel">
+                            <img src="@/assets/images/banner/PC-banner3.jpg" alt="">
+                            <img class="icon" src="@/assets/images/icon/5.png" alt="" @click="change">
+                        </div>
                     </CarouselItem>
                 </Carousel>
             </div>
-            <div class="market">
-                <div class="f1" style="background: #fff;">
-                    <p class="p1">Global Overseas Market</p>
-                    <p class="p2">熙美诚品海外市场增长迅猛</p>
-                </div>
-                <h2>熙美诚品全球<span>1600</span>多家门店</h2>
-                <h2>覆盖<span>84</span>个国家及地区</h2>
-                <img src="@/assets/images/market.jpg" alt="">
-                <p style="padding-bottom: 20px; width: 85%;">好品牌无国界，截至目前，熙美诚品与<span>美国、英国、印度、加拿大、俄罗斯、新加坡、澳大利亚、巴西沙特阿拉伯</span>等确定了合作伙伴关系
-                    ，与<span>全球84多个国家和地区</span>达成战略合作协议，平均每一天有1—2家熙美诚品开业，特别是在<span>东南亚各国、俄罗斯、美国、摩洛哥、迪拜</span>等地区，
-                    门店数量正在快速递增。
-                </p>
-            </div>
-            <div class="goodness">
-                <div class="f1">
-                    <p class="p1">Global Overseas Market</p>
-                    <p class="p2" style="color: #fff;">10大核心竞争力</p>
-                </div>
-                <ul>
-                    <li>
-                        <p style="font-size: 14px;">军事化管理团队</p>
-                        <p>作风过硬，保障有力，超强执行力团队</p>
-                    </li>
-                    <li>
-                        <p style="font-size: 14px;">50000m2仓储物流中心</p>
-                        <p>为客户提供无忧的货品供给，3.9亿库存</p>
-                    </li>
-                    <li>
-                        <p style="font-size: 14px;">二店率高达38%</p>
-                        <p>老加盟商选择开2店或多店超过400家</p>
-                    </li>
-                    <li>
-                        <p style="font-size: 14px;">10年行业沉淀</p>
-                        <p>大数据基础、团队基础、供应链基础</p>
-                    </li>
-                    <li>
-                        <p style="font-size: 14px;">1000家优质产品供应商</p>
-                        <p>50%合作5年以上的优质供应商，产品质量是企业的生命线</p>
-                    </li>
-                    <li>
-                        <p style="font-size: 14px;">天下武功，唯快不破</p>
-                        <p>平均每个月800款新品的速度、同行业的标杆</p>
-                    </li>
-                    <li>
-                        <p style="font-size: 14px;">7大区督导配置</p>
-                        <p>督导下店，服务范围覆盖全国，平均每季度下店服务超过900家门店</p>
-                    </li>
-                    <li>
-                        <p style="font-size: 14px;">供应链</p>
-                        <p> 6000款SKU，百分百全系列定制产品，品质有保证，首批货品百分百调换货政策</p>
-                    </li>
-                    <li>
-                        <p style="font-size: 14px;">全年度12场商学院培训会</p>
-                        <p>行业人才孵化器，七个大区巡回培训</p>
-                    </li>
-                    <li>
-                        <p style="font-size: 14px;">整店输出 </p>
-                        <p>选址、开业、货品供给、督导下店，全程持续服务，让加盟商开店无忧</p>
-                    </li>
-                </ul>
-                <img src="@/assets/images/goodness.jpg" alt="" style="width: 91%;display: block;margin: auto;padding-bottom: 20px;">
-            </div>
-            <div class="category">
-                <div class="f1" style="background: #fff;">
-                    <p class="p1">Product Categories</p>
-                    <p class="p2">产品分类</p>
-                </div>
-                <img src="@/assets/images/category.jpg" alt="" style="width: 91%;display: block;margin: auto;" @click="$router.push({path: 'product'})">
-                <div class="benefit">
-                    <img src="@/assets/images/benefit.jpg" alt="">
-                    <h2>全面的开启支持体系</h2>
-                    <ul>
-                        <p>解决经营痛点，让你开店无忧</p>
-                        <li>免费提供店面地址，专业评估店面可行性</li>
-                        <li>免费设计店铺，提供装修指导</li>
-                        <li>海鼎ESHOP收银软件，了解爆款热销产品清单</li>
-                        <li>高级督导老师下店指导，提升店面营业额</li>
-                        <li>每月商学院培训支持，提高店铺运营管理能力</li>
-                    </ul>
-                    
-                </div>
-                
-            </div>
-            <div class="store">
-                <div class="f1" style="background: #fff;">
-                    <p class="p1">Public Praise & Popularity</p>
-                    <p class="p2">口碑好店 人气爆棚</p>
-                </div>
-                <ul class="storeImg" >
-                        <!-- @click="large" -->
-                    <li>
-                        <img src="@/assets/images/index/store_03.png" alt="" style="width: 49%;height: 90px;">
-                        <img src="@/assets/images/index/store_05.png" alt="" style="width: 25%;height: 90px;">
-                        <img src="@/assets/images/index/store_07.png" alt="" style="width: 25%;height: 90px;">
-                    </li>
-                    <li >
-                        <img src="@/assets/images/index/store_13.png" alt="" style="width: 30%;height: 165px;">
-                        <div class="one">
-                            <div class="two">
-                                <img src="@/assets/images/index/store_15.png" alt="" style="width: 60%;height: 80px;">
-                                <img src="@/assets/images/index/store_16.png" alt="" style="width: 39%;height: 80px;">
-                            </div>
-                            <div class="two" style="margin-bottom: 0;">
-                                <img src="@/assets/images/index/store_19.png" alt="" style="width: 39%;height: 80px;">
-                                <img src="@/assets/images/index/store_21.png" alt="" style="width: 60%;height: 80px;">
-                            </div>        
-                        </div>
-                    </li>
-                    <li>
-                        <div style="width: 50%;height: 100%;display: flex;justify-content: space-between;flex-wrap: wrap;">
-                            <img src="@/assets/images/index/store_25.png" alt="" style="width:50%;height: 50%;">
-                            <img src="@/assets/images/index/store_26.png" alt="" style="width: 49%;height: 50%;">
-                            <img src="@/assets/images/index/store_33.png" alt="" style="width: 100%;height: 48%;">
+            <div class="floor1">
+                <div class="left">
+                    <div class="info1">
+                        <h3>加盟+</h3>
+                        <div>
+                            <p>Franchise</p>
+                            <p>Investment</p>
                         </div>
                         
-                            <img src="@/assets/images/index/store_27.png" alt="" style="width: 24%;height: 100%">
-                       
-                        <div style="width: 24%;height:100%">
-                            <img src="@/assets/images/index/store_29.png" alt="" style="width: 100%;height: 50%;">
-                            <img src="@/assets/images/index/store_36.jpg" alt="" style="width: 100%;height: 50%;">
-                        </div>
-                        
-                    </li>
-                </ul>
-                <!-- <img src="@/assets/images/index2.jpg" alt=""> -->
-            </div>
-            
-            <div class="news">
-                <div class="info">
-                    <img src="@/assets/images/newBanner.jpg" alt="">
-                    <div class="content" v-for="(item,index) in newList" :key="index" @click="detail(item.id)">
-                        <p class="title">{{item.title}}</p>
-                        <p class="time">{{item.editeddate}}</p>
                     </div>
-                    <img src="@/assets/images/more.png" alt="" class="more" @click="$router.push({path: 'news'})">
+                    <ul>
+                        <li :class="{'actived':index === 1}">
+                            <img src="@/assets/images/icon/1.png" alt="">
+                            <p>企业信息</p>
+                        </li>
+                        <li>
+                            <a href="http://www8.53kf.com/m.php?cid=72055204" style="color: #495060;">
+                                <img src="@/assets/images/icon/2.png" alt="">
+                                <p>在线咨询</p>
+                            </a>
+                        </li>
+                        <li @click="$router.push({path: '/store'})">
+                            <img src="@/assets/images/icon/3.png" alt="">
+                            <p>店面展示</p>
+                        </li>
+                        <li @click="$router.push({path: '/order'})">
+                            <img src="@/assets/images/icon/4.png" alt="">
+                            <p>招商加盟</p>
+                        </li>
+                    </ul>
+                    <div class="linear"></div>
+                    <div class="info2">
+                        <div class="text">
+                            <h1>熙美诚品快时尚百货品牌</h1>
+                            <p>与我们一起向全球消费者传递快乐和惊喜</p>
+                        </div>
+                        <p class="line"></p>                      
+                        <p>XIMIVOGUE Fast Fashion Department Store Brand</p>
+                    </div>
+                </div>
+                <div class="right">
+                        <!-- @canplay="onPlayerCanplay($event)" -->
+                    <video-player style="width: 100%;height: 100%;"  id="video"  class="video-player vjs-custom-skin"   :options="playerOptions" >
+                    </video-player>
+                </div>
+            </div>
+            <div class="banner2">
+                <Carousel autoplay v-model="value1" loop :autoplay-speed="5000">
+                    <CarouselItem>
+                        <div class="demo-carousel"><img src="@/assets/images/banner/banner2.jpg" alt=""><p class="text">北欧风格 - 简约时尚契合潮流</p></div>
+                    </CarouselItem>
+                    <CarouselItem>
+                        <div class="demo-carousel"><img src="@/assets/images/banner/7.png" alt="">
+                            <!-- <p class="text">北欧风格 - 简约时尚契合潮流</p> -->
+                        </div>
+                    </CarouselItem>
+                    <CarouselItem>
+                        <div class="demo-carousel"><img src="@/assets/images/banner/8.png" alt="">
+                            <!-- <p class="text">北欧风格 - 简约时尚契合潮流</p> -->
+                        </div>
+                    </CarouselItem>
+                </Carousel>
+            </div>
+            <!-- <div class="floor2">
+                <div class="title">
+                    <h4>GLOBAL OVERSEAS MARKET</h4>
+                    <h1>熙美诚品海外市场增长迅速</h1>
+                    <p class="line"></p>
+                    <p>好品牌无国界，截止目前，熙美诚品与<span>美国、加拿大、英国、印度、俄罗斯、新加坡、澳大利亚、巴西沙特阿拉伯等</span>确定了合作伙伴关系 与全球84个国家和地区达成战略合作关系，
+                        平局每一天有1-2家熙美诚品开业，特别是东南亚各国、俄罗斯、美国、摩洛哥、迪拜等地区，门店数量正在快速递增，熙美诚品，全球从业人员8000多，平均每天有350万元的产品通过熙美在全球的门店，
+                        传递到消费者手中，每天有180万人次光顾熙美在全球的门店</p>
+                    <img src="@/assets/images/index/earth.jpg" alt="" style="width: 100%;">
+                </div>
+            </div> -->
+            <div class="floor3">
+                <img src="@/assets/images/index/5.jpg" alt="" style="width: 100%;margin: auto;height:1000px">
+                <div class="info">
+                        <h4>WHY CHOOSE US</h4>
+                        <h1>我们的优势</h1>
+                        <p class="line"></p>
+                </div>
+                <ul class="content">
+                    <li>
+                        <div>
+                            <p class="title">军事化管理团队</p>
+                            <p class="subtitle">作风过硬、保障有力，超强 执行力团队</p>
+                        </div>
+                        <span class="num">01</span> 
+                    </li>
+                    <li>
+                        <div>
+                            <p class="title"><span>50000</span>平方米仓储物流中心</p>
+                            <p class="subtitle">为客户提供无忧的货品供给，3.9亿库存</p>
+                        </div>
+                        <span class="num">02</span> 
+                    </li>
+                    <li>
+                        <div>
+                            <p class="title">二店率高达<span>38%</span></p>
+                            <p class="subtitle">老加盟商开2店或多店超过400家</p>
+                        </div>
+                       <span class="num">03</span> 
+                    </li>
+                    <li>
+                        <div>
+                            <p class="title"><span>10</span>年行业沉淀</p>
+                            <p class="subtitle">大数据基础、团队基础、供应链基础</p>
+                        </div>
+                        <span class="num">04</span> 
+                    </li>
+                    <li>
+                        <div>
+                            <p class="title"><span>1000</span>家优质产品供应商</p>
+                            <p class="subtitle">50%合作5年以上的优质供应商，产品质量是企业的生命线</p>
+                        </div>
+                       <span class="num">05</span> 
+                    </li>
+                    <li>
+                        <div>
+                            <p class="title">天下武功，唯快不破</p>
+                            <p class="subtitle">平均每个月800款新品的速度，同行业的标杆</p>
+                        </div>
+                       <span class="num">06</span> 
+                    </li>
+                    <li>
+                        <div>
+                            <p class="title"><span>7</span>个大区督导服务</p>
+                            <p class="subtitle">督导下店，服务范围覆盖全国，平均每季度下店服务超过900家店</p>
+                        </div>
+                       <span class="num">07</span> 
+                    </li>
+                    <li>
+                        <div>
+                            <p class="title">供应链</p>
+                            <p class="subtitle">6000款SKU，百分百全系列定制产品，品质有保证，首批货品 百分百调换货政策</p>
+                        </div>
+                       <span class="num">08</span> 
+                    </li>
+                    <li>
+                        <div>
+                            <p class="title">全年度<span>12</span>场商学院培训会</p>
+                            <p class="subtitle">行业人才孵化器，七个大区巡回培训</p>
+                        </div>
+                        <span class="num">09</span> 
+                    </li>
+                    <li>
+                        <div>
+                            <p class="title">整店输出</p>
+                            <p class="subtitle">选址、开店、货品供给、督导下店，全程持续服务，让加盟商 开店无忧</p>
+                        </div>
+                        <span class="num">10</span> 
+                    </li>
+                </ul>
+                
+                <div class="banner2" style="margin-top: -5px;">
+                    <Carousel autoplay v-model="value2" loop :autoplay-speed="5000">
+                        <CarouselItem>
+                            <div class="demo-carousel"><img src="@/assets/images/banner/3.png" alt=""></div>
+                        </CarouselItem>
+                        <CarouselItem>
+                            <div class="demo-carousel"><img src="@/assets/images/banner/4.png" alt=""></div>
+                        </CarouselItem>
+                        <CarouselItem>
+                            <div class="demo-carousel"><img src="@/assets/images/banner/5.png" alt=""></div>
+                        </CarouselItem>
+                      
+                    </Carousel>
+                </div>
+            </div>
+            <div class="floor4">
+                <h4>PRODUCT CATEGORIES</h4>
+                <h1>9大类产品</h1>
+                <p class="line"></p>
+                <p style="font-size: 16px;text-align:left; text-indent: 2em;">XIMIVOGUE熙美诚品是集品质、价格、创意、设计、供应和销售于一体，为全球消费者传递快乐和惊喜的快时尚百货品牌。
+                    以“物超所值”为核心理念超强整合生活百货、彩妆护肤、文体礼品、饰品系列、休闲食品、精美包饰、毛绒玩具、数码配件、季节产品等九大品类。竭尽全力为全球消费者打造超越他们预期的产品。
+                </p>
+                <img src="@/assets/images/index/4.jpg" alt="" style="width: 100%;margin-top: 20px;">  
+            </div>
+            <!-- <div class="product">
+                <Carousel :autoplay="false" v-model="value3" loop :autoplay-speed="5000" dots="none"  arrow="always">
+                    <CarouselItem>
+                        <div class="demo-carousel">
+                            <img src="@/assets/images/banner/product/1.jpg" alt="">
+                            <img src="@/assets/images/banner/product/2.jpg" alt="">
+                            <img src="@/assets/images/banner/product/3.jpg" alt="">
+                            <img src="@/assets/images/banner/product/4.jpg" alt="">
+                        </div>
+                    </CarouselItem>
+                    <CarouselItem>
+                        <div class="demo-carousel">
+                            <img src="@/assets/images/banner/product/5.jpg" alt="">
+                            <img src="@/assets/images/banner/product/季节产品.png" alt="">
+                            <img src="@/assets/images/banner/product/精美包饰.png" alt="">
+                            <img src="@/assets/images/banner/product/生活百货.png" alt="">
+                        </div>
+                    </CarouselItem>
+                    <CarouselItem>
+                        <div class="demo-carousel">
+                            <img src="@/assets/images/banner/product/休闲食品.png" alt="">
+                        </div>
+                    </CarouselItem>
+                </Carousel>
+            </div> -->
+            <div class="floor5">
+                <div class="infos">
+                    <h1>全面的开店支持体系</h1>
+                    <p class="line"></p>
+                    <p class="txt">解决经营痛点 助您开店无忧</p>
+                    <ul>
+                        <li><img src="@/assets/images/icon/circle.jpg" alt=""><p>免费提供店面选址服务，专业评估店面可行性</p></li>
+                        <li><img src="@/assets/images/icon/circle.jpg" alt=""><p>专业空间设计团队，免费设计店铺提供装修指导</p></li>
+                        <li><img src="@/assets/images/icon/circle.jpg" alt=""><p>海鼎ESHOP智能ERP收银软件，全面把控店面运营情况</p></li>
+                        <li><img src="@/assets/images/icon/circle.jpg" alt=""><p>高级督导老师下店指导，查漏补缺提升店面营业额</p></li>
+                        <li><img src="@/assets/images/icon/circle.jpg" alt=""><p>每月商学院培训支持，提高店铺运营管理能力</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="floor6">
+                <div class="title">
+                    <h4>Public Praise & Popularity</h4>
+                    <h1>口碑好店  人气爆棚</h1>
+                    <p class="line"></p>
+                    <img src="@/assets/images/index/3.jpg" alt="" style="width: 100%;">
+                </div>
+            </div>
+            <div class="floor7">
+                <div class="title">
+                    <h4>News & information</h4>
+                    <h1>行业动态  熙美资讯</h1>
+                    <p class="line"></p>
+                    <ul class="news">
+                        <li v-for="(item,index) in newList" :key="index" @click="detail(item.id)" class="artitem">
+                            <img :src="item.pathname" alt="" title="点击查看详情">
+                            <p class="time">{{item.editeddate}}</p>
+                            <div>
+                                <p class="title">{{item.title}}</p>
+                                <p class="subtitle">{{item.content}}</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="more" @click="$router.push({path: '/news'})">查看全部</p>
                 </div>
             </div>
         </div>
-        <Modal v-model="Modal" title="查看大图" >
-            <img :src="src" alt="">
-        </Modal>
-        <BackTop :bottom="50" :right="10">
-            <div class="top"><span class="iconfont">&#xe63f;</span></div>
+        <BackTop :height="110" :bottom="30" v-if="show">
+            <div class="top">
+                <img src="@/assets/images/top.png" alt="">
+            </div>
         </BackTop>
-        <!-- 底部内容 -->
-        <!-- <Bottom></Bottom> -->
-        <!-- <Alert></Alert> -->
-        <Footer v-show="show"></Footer>
-        <Msg></Msg>
+        <BackTop :height="110" :bottom="400"  style="position:absolute;" v-else>
+            <div class="top">
+                <img src="@/assets/images/top.png" alt="">
+            </div>
+        </BackTop>
+        <Footer></Footer>
+        
     </div>
 </template>
+
 <script>
-import Header from '@/components/header.vue'
-import Footer from '@/components/footer.vue'
-import Msg from '@/components/msg.vue'
+import Footer from './footer.vue'
+import Header from './header.vue'
 import https from '@/http.js'
-import Bottom from '@/components/bottom.vue'
 export default {
-    data(){
-        return{
-            
+    components: {
+        Header,
+        Footer,
+    },
+    data() {
+        return {
+            show:true,
+            // 轮播图
+            value:0,
+            value1:0,
+            value2:0,
+            value3:0,
+            // 点击菜单
+            index:1,
+            // 视频播放
             playerOptions :	{
-                // playbackRates: [0.7, 1.0, 1.5, 2.0], //播放速度
                 preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
                 language: 'zh-CN',
                 aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
@@ -248,7 +315,7 @@ export default {
                     type: 'video/mp4',
                     src: "http://www.xmcpcn.com/img/%E7%86%99%E7%BE%8E%E5%8D%81%E5%91%A8%E5%B9%B4%E7%9B%9B%E5%85%B8.mp4", //url地址
                 }],
-                poster: "../../static/img/video.jpg", //你的封面地址
+                poster: "../../static/video.jpg", //你的封面地址
                 notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的默认信息。
                 // controlBar: {
                 //     timeDivider: true,
@@ -258,95 +325,121 @@ export default {
                 // }
                 
             },
-            value:0,
-            value1:0,
-            show:false,
+            prolist:[
+                {id:1,img:'../../images/banner/product/1.jpg'},
+                {id:1,img:'../images/banner/product/2.jpg'},
+                {id:1,img:'../images/banner/product/3.jpg'},
+                {id:1,img:'../images/banner/product/4.jpg'},
+                {id:1,img:'../images/banner/product/5.jpg'},
+            ],
+            // 轮播
+            swiperOption: {
+                // virtual: true,
+                loop: true,
+                autoplay:false,
+                loop:true,
+                slidesPerView : 3,
+                slidesPerGroup : 1,
+                // pagination: {
+                //     el: '.swiper-pagination'
+                // }
+            },
+            // 新闻
             newList:[],
-            Modal:false,
-            src:'',
-            mobile:"",
-            text:"",
-            speed:5000
-
         }
     },
-    components: {
-        Header,
-        Footer,
-        Msg,
-        
+    mounted(){
+        document.addEventListener('scroll', this.handleScroll, true);  // 监听（绑定）滚轮滚动事件
     },
-    created () {
-        this.getnew();
-        const that = this
-        that.timer = setInterval(function () {
-            if (document.readyState === 'complete') {
-               that.show=true;
-                window.clearInterval(that.timer)
-            }
-        }, 1000);
-        
+    created() {
+        this. getnew();
+        this.toFullVideo();
+
     },
     computed: {
-        playsinline(){
-    		var ua = navigator.userAgent.toLocaleLowerCase(); //x5内核
-            if (ua.match(/tencenttraveler/) != null || ua.match(/qqbrowse/) != null) {
-                return false
-            }else{
-                //ios端
-                return true				
-            }
-            }
+        
     },
-    methods:{       
-        getnew(){
-            https.get('/gyanwang/index.php/Home/Index/homepage').then((data) => {
-               this.newList=data.data;
-               this.newList.forEach(ele=>{
-                   ele.editeddate.substr(10,9);
-               })
-            }).catch((err)=>{
-                console.log(err)
-
-            })
+    methods: {
+         /* 滚动显示新闻导航 */
+         handleScroll(){
+            var top=document.scrollingElement.scrollTop;
+            if(top>200){
+                $('.header').css({"top":"0"});
+                $('.header').css({"background":"#fff"});
+            }else{
+                $('.header').css({"top":"20px"});
+                $('.header').css({"background":"none"});
+            }
+            let bottom=$('.footer').offset().top-top;
+            if(bottom<830){
+               this.show=false;
+            }else {
+                this.show=true;
+            }
         },
+        change(){
+            document.scrollingElement.scrollTop=700;
+        },
+        // 视频播放
         play(){
             var video =$('#video');
-            
             if(video.paused){
               video.play();
             }else if(video.play()){
                video.pause();
              }
         },
-       large(e){
-           this.src=e.target.src;
-           this.Modal=true;
-       },
-       //在vue-video-player的onPlayerCanplay(视频可播放)这个方法中添加回调
-        onPlayerCanplay(player) {
-            // console.log('player Canplay!', player)
-            //解决自动全屏
-            var ua = navigator.userAgent.toLocaleLowerCase();
-            //x5内核
-            if (ua.match(/tencenttraveler/) != null || ua.match(/qqbrowse/) != null) {
-                $('body').find('video').attr('x-webkit-airplay',true).attr('x5-playsinline',true).attr('webkit-playsinline',true).attr('playsinline',true)
-            }else{
-                //ios端
-                $('body').find('video').attr('webkit-playsinline',"true").attr('playsinline',"true") 
-                
+        //在vue-video-player的onPlayerCanplay(视频可播放)这个方法中添加回调
+        toFullVideo() {
+            
+            if ($('#video').requestFullScreen) {
+                $('#video').requestFullScreen();
+            } else if ($('#video').mozRequestFullScreen) {
+                $('#video').mozRequestFullScreen();
+            } else if ($('#video').webkitRequestFullScreen) {
+                $('#video').webkitRequestFullScreen();
+            } else if ($('#video').msRequestFullscreen) {
+                $('#video').msRequestFullscreen();
             }
+        },
+        // 获取新闻
+        getnew(){
+            https.get('/gyanwang/index.php/Home/Index/homepage').then((data) => {
+               this.newList=data.data;
+            //    this.newList.forEach(ele=>{
+            //        ele.editeddate.substr(10,9);
+            //    })
+                for(let i in this.newList){
+                    this.newList[i].editeddate.substr(10,9);
+                    this.newList[i].pathname='http://www.xmcpcn.com/'+this.newList[i].pathname
+                    // this.newList[i].title=this.newList[i].title.substr(0,15)+'...';
+                    this.newList[i].content=this.newList[i].content.replace(/<p (.*?)>/gi,"").replace(/<\/p>/gi,"").replace(/<div (.*?)>/gi,"").replace(/<\/div>/gi,"").replace(/<span (.*?)>/gi,"").replace(/<\/span>/gi,"");
+                    
+                    this.newList[i].content=this.newList[i].content.replace(/&nbsp;/gi,'').replace(/<p>/gi,'').replace(/<br \/>/gi,'').replace(/<h2 (.*?)>/gi,"").replace(/<\/h2>/gi,'').replace(/<span>/gi,'').slice(0,40)+'...'
+                    // this.newList[i].editeddate=this.newList[i].editeddate.slice(0,10);
+                }
+            }).catch((err)=>{
+                console.log(err)
 
+            })
         },
         // 查看文章详情
         detail(id){
             this.$router.push({path:'/newDetail',query:{num:id}})
         }
+       
+    },
+    destroyed() {
+        document.removeEventListener('scroll', this.handleScroll,true);   //  离开页面清除（移除）滚轮滚动事件,
     }
 }
 </script>
 
-    
-    
-    
-    
+<style lang="less" scoped>
+    #main-content{
+        background: #fff;
+    }
+</style>
+
+
+

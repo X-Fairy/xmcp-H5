@@ -1,68 +1,106 @@
-
-.menu{
-    position: fixed;
-    top: 45px;
-    z-index: 1000;
+.news{
     width: 100%;
-    .ivu-menu-light.ivu-menu-horizontal .ivu-menu-item-active, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-item:hover, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu-active, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu:hover {
-        color: #1d8c9f;
-        border-bottom: 2px solid #1d8c9f;
+    height: 100%;
+    position: relative;
+    .header {
+        background: #fff;
+        top:0;
     }
-    .ivu-menu-item {
-        width: 50% !important;
-        text-align: center !important;
-    }
-}
-.new{
-    display: flex;
-    width: 85%;
-    margin: 0 auto;
-    justify-content: space-between;
-    padding: 15px 0;
-    border-top: 1px dashed #ddd;
-   
-    .newImg{
-        width: 140px !important;
-        height: 90px;
-    }
-    .content{
-        width: 52%;
-        .title{
-            font-size: 16px;
+    .main{
+        position: relative;
+        margin-top:95px;
+        width: 100%;
+        .linear{
+            height:50px;
+            background: linear-gradient(to bottom,#e4e4e4,#fff);
         }
-        .describe{
-            font-size: 13px;
-            color: rgb(136, 136, 136);
-        }
-        div{
-            display: flex;
-            justify-content:space-between;
-            font-size: 12px;
-            margin-top: 5px;
-            .more{
-                cursor: pointer;
+        .menu{
+            position: fixed;
+            top: 100px;
+            z-index: 1000;
+            width: 100%;
+            background: #f1f1f1;
+            .ivu-menu{
+                width: 63%;
+                background: none;
+                margin: auto;
+                .ivu-menu-item{
+                    font-size:18px !important;
+                }
+                
+            }
+            .ivu-menu-light.ivu-menu-horizontal .ivu-menu-item-active, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-item:hover, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu-active, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu:hover {
+                color: #1d8c9f;
+                border-bottom: 2px solid #1d8c9f;
+            }
+            .ivu-menu-item {
+                width: 33.3% !important;
+                text-align: center !important;
             }
         }
-    }
-    
-}
-.page{
-    display: flex;
-    justify-content: flex-end;
-    position: relative;
-    right: 15px;
-    bottom: -30px;
-    .ivu-page-item-active a, .ivu-page-item-active:hover a {
-        color: #e7d832;
-    }
-    .ivu-page-item-active {
-         background-color: #fff;
-         border: 1px solid #dddee1;
-         a{
-            color: #e7d832;
-         }
-    }
-    .ivu-page-item:hover {
-        border-color: #dddee1;
+        .infos{
+            margin-top: 55px;
+            margin-bottom:50px;
+            .new:nth-child(odd){
+                background: #f5f5f5 !important;
+            }
+            .new{
+                display: flex;
+                width: 63%;
+                margin: 0 auto;
+                justify-content: space-between;
+                margin-bottom: 40px;
+                box-shadow: 10px 15px 15px #eee;
+                border: 1px solid #f1f1f1;
+                .newImg{
+                    width: 350px !important;
+                    height: 270px;
+                }
+                .content{
+                    margin-left: 40px;
+                    width: 70%;
+                    padding-right: 45px;
+                    .title{
+                        font-size: 21px;
+                        padding: 40px 0;
+                    }
+                    .time,.describe{
+                        font-size: 16px;
+                        color: #999999;
+                        font-family: 宋体;
+                        padding-bottom: 20px;
+                        
+                    }
+                    .more{
+                        cursor: pointer;
+                        float: right;
+                        padding: 10px 50px;
+                        background: #404040;
+                        color: #fff;
+                        &:hover{
+                            background: #1d8c9f;
+                        }
+                    }
+                }
+                
+            }
+        }
+        .page{
+            width: 63%;
+            margin: auto;
+            padding-bottom: 100px;
+            text-align: center;
+            .ivu-page-item:hover{
+                border-color: #f6c645 !important;
+                a:hover{
+                    color: #f6c645 !important;
+                }
+            }
+            .ivu-page-item-active {
+                background-color: #f6c645;
+                border-color: #f6c645;
+            }
+        }
+        
     }
 }

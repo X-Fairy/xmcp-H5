@@ -45,6 +45,22 @@ export {changeTime}
 
 
 /**
+ * 判断一个数是不是6的倍数
+ */
+function demo(val) {
+    if(val % 6 === 0) {
+        console.log(this)
+    } else {
+        console.log('不是6的倍数')
+    }
+}
+export {demo}
+
+
+
+
+
+/**
  * 数组求和函数
  */
 function getNumBox(arr) {
@@ -57,37 +73,55 @@ function getNumBox(arr) {
 export {getNumBox}
 
 
-
-/**
- * 根据一个数组数据，过滤另一个数组数据
- * @param {Array}  arr 被过滤的数组
- * @param {Array}  filterArr 过滤的数组
- * @param {String} id 对象的属性名（根据哪个字段）
- * 
- */
-function arrFilter(arr, filterArr, id) {
-    let filterIds = filterArr.map(item => item[id]);
-    return arr.filter(item => !filterIds.includes(item[id]));
+// 设置cookie
+function setCookie (name,value){
+    var Days = 30;
+    var exp = new Date();
+    exp.setTime(exp.getTime() + Days*24*60*60*1000);
+    document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
 }
-export {arrFilter}
+export{setCookie}
 
 
 
-/**
- *  由对象组成的数组按字母进行排序
- *  @param {Array} arr 对象数组的数组
- *  @param {String} eachName 数组里对象里的属性 按照这个属性的字母顺序进行排序
- */
-function sortName(arr,eachName) {
-    arr.forEach(function(item) {
-        let temp = item[eachName];
-        item.sortName = temp;
-    })
-    let resultArray = arr.sort(
-        function compareFunction(param1, param2) {
-            return param1.sortName.localeCompare(param2.sortName,"zh")
-        }
-    )
-    return resultArray
+
+// 读取cookie
+function getCookie(name){
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+    if(arr=document.cookie.match(reg)) {
+        return unescape(arr[2]);
+
+    } else {
+        return null;
+    }
 }
-export {sortName}
+export{getCookie}
+
+
+
+
+// 删除cookie
+function delCookie(name){
+    var exp = new Date();
+    exp.setTime(exp.getTime() - 1);
+    var cval=getCookie(name);
+    if(cval!=null)
+    document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+}
+export{delCookie}
+
+
+
+
+
+function getCookieLan(name,defaultValue) {      //
+    var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+    if (arr = document.cookie.match(reg))
+      return unescape(arr[2]);
+    else
+      return defaultValue;
+  }
+  
+  export {
+    getCookieLan
+  }

@@ -1,48 +1,92 @@
 .product{
-    .goods{
-        border-top: 1px solid #ddd;
-        padding: 15px 0;
-        ul{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .header {
+        background: #fff;
+        top:0;
+    }
+    .main{
+        position: relative;
+        margin-top:95px;
+        width: 100%;
+        .floor1{
+            width: 63%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 0;
+            .left{
+                width: 30%;
+                h4{
+                    color: #dcdcdc;
+                    font-size: 24px;
+                }
+                h1{
+                    font-size: 40px;
+                    color: #1d8c9f;
+                }
+                p.line{
+                    width: 50px;
+                    height: 3px;
+                    background-color: #e7d832;
+                    margin-top: 20px;
+                    margin-bottom: 40px;
+                }
+            }
+            .right{
+                width: 70%;
+                display: flex;
+                line-height: 60px;
+                flex-wrap: nowrap;
+                .ivu-menu-horizontal {
+                    height: 100px !important;
+                    line-height: 100px !important;
+                }
+                .ivu-menu-light {
+                    background: none;
+                    // margin-top: 20px;
+                }
+                .ivu-menu-light.ivu-menu-horizontal .ivu-menu-item-active, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-item:hover, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu-active, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu:hover {
+                    color: #1d8c9f;
+                    border-bottom: 3px solid #1d8c9f;
+                }
+                .ivu-menu-item{
+                    // border-bottom: 2px solid #fff !important;
+                    // padding-bottom: 75px !important;
+                }
+                span{
+                    line-height: 100px;
+                    margin-left: 30px;
+                }
+            }
+        }
+        .goods{
+            width: 63%;
+            margin: auto;
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
             li{
-                width: 33.3%;
-                text-align: center;
-                padding: 8px 0;
-                font-size: 13px;
-            }
-            li.active{
-                // display: inline-block;
-                // width: 70px;
-                // height: 2px;
-                // background: #1d8c9f;
-                color:#1d8c9f;
-            }
-            
+                width: 23.5%;
+                margin-bottom: 20px;
+                // margin-right: 20px;
+                img{
+                    width: 100% !important;
+                    height: 100% !important;
+                }
+            } 
         }
-        ul.list li{
-            width: 40%;
-        }
-    }
-    .content{
-        background: #f0f0f0;
-        padding-bottom: 20px;
-        p{
-            width: 90%;
+        .page{
+            width: 63%;
             margin: auto;
-            background: #fff;
-            padding: 15px;
-            line-height: 25px;
-            margin-top: -10px;
-            font-size: 13px;
+            padding: 15px 0;
+            text-align: center;
+            margin-bottom: 50px;
+            .ivu-page-item-active {
+                background-color: #f6c645;
+                border-color: #f6c645;
+            }
         }
-    }
-    .page{
-        background: #f0f0f0;
-        right: 0;
-        padding: 20px;
-        bottom: 0;
-        top: -20px;
     }
 }
